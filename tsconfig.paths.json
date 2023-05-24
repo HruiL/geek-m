@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["./src/shared/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@router/*": ["./src/router/*"],
+      "@store/*": ["./src/store/*"],
+      "@slice/*": ["./src/store/slice/*"],
+      "@service/*": ["./src/store/service/*"],
+      "@middlewares/*":["./src/store/middlewares/*"],
+      "@styles/*": ["./src/assets/styles/*"],
+      "@images/*": ["./src/assets/images/*"]
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import "@styles/color.less";
+.container {
+  width: 100%;
+  height: 11.73vw;
+  overflow: hidden;
+  box-shadow: 0 0.4vw 2vw #f0f0f0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  background: #FFF;
+  .list {
+    height: 11.73vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-right: 23.73vw;
+    // 隐藏滚动条
+    &::-webkit-scrollbar {
+      display: none;
+      /* 解决 ios 系统滑动卡顿问题 */
+      -webkit-overflow-scrolling: touch;
+    }
+    .item {
+      white-space: nowrap;
+      padding: 0 3vw;
+      font-size: 4vw;
+      color: #9ea1ae;
+      height: 11.73vw;
+      line-height: 11.73vw;
+    }
+    .active {
+      font-size: 4.8vw;
+      color: #3a3948;
+      font-weight: 500;
+      position: relative;
+      &::before {
+        content: "";
+        width: 8vw;
+        height: 0.8vw;
+        background: @mainColor;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .aside {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #fff;
+    height: 11.73vw;
+    display: flex;
+    .search {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-right: 5.33vw;
+      .search_icon {
+        width: 4.8vw;
+        height: 4.8vw;
+      }
+      &::before {
+        content: "";
+        width: 5.07vw;
+        height: 100%;
+        position: absolute;
+        left: -5.07vw;
+        top: 0;
+        background: linear-gradient(270deg, #fff, hsla(0, 0%, 100%, 0.3));
+      }
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+      margin-right: 4vw;
+      .channel_icon {
+        width: 4.53vw;
+        height: 4vw;
+      }
+    }
+  }
+}

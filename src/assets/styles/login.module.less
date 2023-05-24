@@ -1,0 +1,55 @@
+@import "@styles/color.less";
+@import "@styles/hairline.less";
+
+.login_page {
+  overflow: hidden;
+  h2 {
+    margin-top: 14.4vw;
+    font-size: 6.4vw;
+    margin-bottom: 13.6vw;
+    padding: 0 8.9333vw;
+  }
+  form {
+    padding: 0 8.9333vw;
+    .form_item {
+      position: relative;
+      .hairline("bottom", @borderColor);
+      padding-bottom: 5.3333vw;
+      margin-bottom: 10vw;
+      display: flex;
+      flex-wrap: wrap;
+      input {
+        border: none;
+        font-size: 4.2667vw;
+        flex: 1;
+      }
+      button {
+        font-size: 3.7333vw;
+        background: none;
+        border: none;
+        &.active {
+          color: #a5a6ab;
+        }
+      }
+    }
+    .login_button {
+      height: 13.2vw;
+      width: 100%;
+      color: white;
+      background: linear-gradient(90deg, #fe4f4f, #fc6627);
+      margin-bottom: 2vw;
+      font-size: 4.2667vw;
+      // css属性选择器，当类名为login_button的元素上有disable属性时，则添加disabled类名
+      // 这样做的好处是，避免了在元素上既要添加disabled属性又要添加disabled类名，只需要添加disabled属性即可
+      &[disabled] {
+        background: linear-gradient(315deg, #ff9999, #ffa179);
+      }
+    }
+    .error_message {
+      font-size: 3vw;
+      color: @errorColor;
+      margin-top: 1.3333vw;
+      width: 100%;
+    }
+  }
+}

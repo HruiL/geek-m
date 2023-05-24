@@ -1,0 +1,63 @@
+@import "@styles/color.less";
+@import "@styles/hairline.less";
+
+.layer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.4s;
+  .container {
+    width: 91.47vw;
+    background: #fff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border-radius: 1.6vw;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.4s;
+    .title {
+      text-align: center;
+      font-size: 4.8vw;
+      font-weight: 500;
+      color: #333;
+      padding: 4vw 0;
+    }
+    .content {
+      text-align: center;
+      font-size: 4vw;
+      padding-bottom: 4vw;
+      color: #555;
+    }
+    .buttons {
+      position: relative;
+      .hairline("top", @borderColor);
+      display: flex;
+      button {
+        flex: 1;
+        height: 14vw;
+        font-size: 4.8vw;
+      }
+      .sure {
+        color: @mainColor;
+        position: relative;
+        .hairline("left", @borderColor);
+      }
+      .cancel {
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    .container {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
